@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script>
+      function loadAboutInformation() {
+        //call to ajax
+        //about.html
+        var request = new XMLHttpRequest();
+        request.open("GET", "data.json");
+        request.onreadystatechange = function () {
+          //call whenever statechange
+          if (this.readyState == 4 && this.status == 200) {
+            //complete and successfull
+            console.log(this.responseText);
+            let ob = JSON.parse(this.responseText);
+            console.log(ob);
+            document.getElementById("container").innerHTML = this.responseText;
+          }
+        };
+
+        request.send();
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Welcome to home page</h1>
+    <h2>we are learning ajax</h2>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa laborum
+      inventore illo laudantium. Illum enim hic quod in, cumque, minima quaerat
+      fugit unde iste illo repudiandae itaque. Assumenda praesentium id qui
+      voluptas, quasi optio.
+    </p>
+    <h1><a href="about.html">About Page</a></h1>
+    <button onclick="loadAboutInformation()">Load about</button>
+    <div id="container"></div>
+
+    <button id="jbtn">Jquery Load</button>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+    <!-- above script is jquery -->
+
+    <script>
+      $(document).ready(function () {
+        //document is ready
+        $("#jbtn").click(function () {
+          //btn click
+          $.get("data.json", function (data) {
+            console.log("jquery:");
+            console.log(data);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
