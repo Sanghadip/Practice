@@ -1,0 +1,31 @@
+*{
+    margin: 0%;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 30px;
+    color: white;
+    padding: 10px;
+    background-color: rgb(113, 110, 106);
+    border-radius: 20px;
+}
+
+select,
+button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin: 30px;
+    color: white;
+    padding: 10px;
+    font: 100 1.2rem sans-serif;
+    background-color: rgb(113, 110, 106);
+    border-radius: 6px;
+}
+
+button{
+    background-color: rgb(37, 51, 50);
+}
